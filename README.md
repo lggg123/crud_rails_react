@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple airline review app using Ruby on Rails and React. 
 
-Things you may want to cover:
+To run the app make sure to have rails 6.1.4 installed and Ruby 3.0.1 
 
-* Ruby version
+Once that is done make sure to create your database using `rails db:create` 
 
-* System dependencies
+After the database is done being created proceed to run `rails db:migrate` to migrate all the tables to be created to your schema. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Once that is done run `rails s` to start your server and enjoy the app!
