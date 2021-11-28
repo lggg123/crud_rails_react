@@ -7,7 +7,7 @@ module Api
                 review = Review.new(review_params)
 
                 if review.save 
-                    render json: ReviewSerializer.new(review).serialized_json
+                    render json: serializer(review)
                 else 
                     render json: { error: review.errors.messages }, status: 422
                 end
@@ -27,6 +27,17 @@ module Api
 
             def review_params
                 params.require(:review).permit(:title, :description, :score, :airline_id)
+            end
+
+            # fast_jsonapi serializer 
+            def serializer(records, options = {})
+                ReviewSerializer
+                  .new(records, options)
+                  .serialized_json
+            end
+        
+            def errors(record)
+                { errors: record.errors.messages }
             end
         end
     end
